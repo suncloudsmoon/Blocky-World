@@ -7,7 +7,7 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import other.Achievements;
+import save.Achievements;
 
 public class Settings implements ActionListener {
 

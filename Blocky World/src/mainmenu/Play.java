@@ -60,9 +60,8 @@ public class Play implements ActionListener {
 		// System.out.println("Path: " + WorldOptions.PATH);
 		// System.out.println(new File(WorldOptions.PATH).mkdirs());
 
-		if (new File(WorldOptions.FULLPATH).exists()) {
-			System.out.println(true);
-			list = new JList<String>(new File(WorldOptions.FULLPATH).list());
+		if (new File(WorldOptions.mainHome + WorldOptions.WORLD_LOCATION).exists()) {
+			list = new JList<String>(new File(WorldOptions.mainHome + WorldOptions.WORLD_LOCATION).list());
 		} else {
 			list = new JList<String>();
 		}
@@ -121,7 +120,7 @@ public class Play implements ActionListener {
 				frame.remove(panel);
 
 				WorldOptions.setFileName(list.getSelectedValue());
-				new Game(WorldOptions.FULLPATH + WorldOptions.getFileName(), frame);
+				new Game(WorldOptions.mainHome + WorldOptions.getFileName(), frame);
 			}
 		} else if (e.getSource() == create) {
 			clear();
@@ -131,7 +130,7 @@ public class Play implements ActionListener {
 				clear();
 				WorldOptions.setFileName(list.getSelectedValue());
 				new Edit(list.getSelectedValue().substring(0, list.getSelectedValue().length() - 4),
-						WorldOptions.FULLPATH + WorldOptions.getFileName(), panel, frame);
+						WorldOptions.mainHome + WorldOptions.getFileName(), panel, frame);
 			}
 
 		} else if (e.getSource() == goBack) {

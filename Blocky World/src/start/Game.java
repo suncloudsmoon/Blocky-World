@@ -32,6 +32,11 @@ import gui.ActionBar;
 import player.Player;
 import save.WorldOptions;
 
+/**
+ * Where the game truely begins
+ * @author Ganesha Ajjampura
+ *
+ */
 public class Game extends JPanel implements MouseListener {
 
 	private static final long serialVersionUID = 2920781633355292195L;

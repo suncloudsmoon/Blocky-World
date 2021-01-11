@@ -7,10 +7,10 @@ import java.util.LinkedHashMap;
 
 import biome.BiomeType;
 import block.BlockType;
-import other.Compute;
 import save.WorldOptions;
 import start.Game;
 import start.StartPoint;
+import tilegame2d.math.SimpleMath;
 
 public class Background {
 
@@ -93,7 +93,7 @@ public class Background {
 		// System.out.println(BiomeType.values()[Compute.getRandValue(0,
 		// BiomeType.values().length, Game.rand)]);
 		WorldOptions.coordinates.put(p,
-				BiomeType.values()[Compute.getRandValue(0, BiomeType.values().length, Game.rand)],
+				BiomeType.values()[SimpleMath.getRandValue(0, BiomeType.values().length, Game.rand)],
 				new LinkedHashMap<Point, BlockType>());
 		ChunkAction.generateChunk(p, Game.rand);
 	}

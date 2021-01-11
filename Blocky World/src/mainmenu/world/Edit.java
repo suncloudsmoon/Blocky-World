@@ -93,17 +93,14 @@ public class Edit implements ActionListener {
 		if (e.getSource() == playWorld) {
 			if (!enterSeed.getText().isBlank() && !enterName.getText().isBlank()) {
 				try {
-					System.out.println("OldPath=" + WorldOptions.FULLPATH + WorldOptions.getFileName() + ".bin");
-					File oldFile = new File(WorldOptions.FULLPATH + WorldOptions.getFileName() + ".bin");
+					File oldFile = new File(WorldOptions.mainHome + "\\" + WorldOptions.getFileName() + ".bin");
 					WorldOptions.setFileName(enterName.getText() + ".bin");
-					oldFile.renameTo(new File(WorldOptions.FULLPATH + WorldOptions.getFileName()));
+					oldFile.renameTo(new File(WorldOptions.mainHome + "\\" + WorldOptions.getFileName()));
 
 					clear();
 					panel.setEnabled(false);
 					new Game(Long.parseLong(enterSeed.getText()), frame);
 				} catch (NullPointerException e1) {
-					e1.printStackTrace();
-				} catch (Exception e1) {
 					e1.printStackTrace();
 				}
 			}
